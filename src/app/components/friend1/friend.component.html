@@ -1,0 +1,36 @@
+<h1 style="height: 10px;"></h1>
+<h1><div class="font">Student ID : {{sid}}</div></h1>
+<form [formGroup]="studentForm">
+  <div>
+    <div class="field">
+      <select id = "term" formControlName="term">
+        <option value = "2564-1">2564-1</option>
+        <option value = "2564-2">2564-2</option>
+    </select>
+    </div>
+
+    <div>
+      <button class="button is-success" type="submit" (click)="onSubmit(studentForm)"><div class="font">เลือกเทอม</div></button>
+    </div>
+
+  </div>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>รหัสวิชา</th><th>ชื่อวิชา</th><th>ตอนเรียน</th><th>ปีการศึกษา</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let f of student | async">
+      <td>{{ f.course_id }} </td>
+      <td><b> {{ f.course_name }} </b></td>
+      <td>{{ f.section }} </td>
+      <td>{{ f.term }} </td>
+      <td>
+      </td>
+    </tr>
+  </tbody>
+</table>

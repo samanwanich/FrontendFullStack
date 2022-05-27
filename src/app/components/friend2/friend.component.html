@@ -1,0 +1,60 @@
+<h1 style="height: 10px;"></h1>
+<h1><div class="font">Teacher ID : {{tid}}</div></h1>
+<form [formGroup]="teacherForm">
+  <div>
+    <div class="field">
+      <select id = "term" formControlName="term">
+        <option value = "2564-1"><div class="font">2564-1</div></option>
+        <option value = "2564-2"><div class="font">2564-2</div></option>
+    </select>
+    </div>
+  </div>
+
+
+    <div>
+      <button class="button is-success" type="submit" (click)="onSubmit(teacherForm)"><div class="font">เลือกเทอม</div></button>
+    </div>
+
+</form>
+<div *ngIf="default">
+<table>
+  <thead>
+    <tr>
+      <th>รหัสวิชา</th><th>ชื่อวิชา</th><th>ตอนเรียน</th><th>ปีการศึกษา</th><th>ตัวเลือก</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let f of course | async">
+      <td>{{ f.course_id }} </td>
+      <td><b> {{ f.course_name }} </b></td>
+      <td>{{ f.section }} </td>
+      <td>{{ f.term }} </td>
+      <td>
+        <button type="button" class="button is-warning font" (click)="getDetails(f.course_id,f.term,f.section)">ดูรายละเอียด</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div *ngIf="!default">
+  <table>
+    <thead>
+      <tr>
+        <th>รหัสวิชา</th><th>ชื่อวิชา</th><th>ตอนเรียน</th><th>ปีการศึกษา</th><th>รหัสนักศึกษา</th><th>ชื่อ</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let f of course | async">
+        <td>{{ f.course_id }} </td>
+        <td><b> {{ f.course_name }} </b></td>
+        <td>{{ f.section }} </td>
+        <td>{{ f.term }} </td>
+        <td>{{ f.std_id }} </td>
+        <td>{{ f.std_name }} </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
