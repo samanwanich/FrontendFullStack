@@ -18,7 +18,6 @@ export class StudentComponent implements OnInit {
   constructor(private fb: FormBuilder, private fservice: PageService) { }
 
   ngOnInit(): void {
-    // should use reactive form
     this.studentForm = this.fb.group ({
       term: ['2564-2'],
     });
@@ -32,8 +31,4 @@ export class StudentComponent implements OnInit {
     this.student = this.fservice.getStudent(this.sid,this.term);
   }
 
-  getStudents(id:string ,term:string) {
-    this.student = this.fservice.getStudent(id,term);
-  }
-
-} //end of class
+}

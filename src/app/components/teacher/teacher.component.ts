@@ -19,7 +19,6 @@ export class TeacherComponent implements OnInit {
   constructor(private fb: FormBuilder, private fservice: PageService) { }
 
   ngOnInit(): void {
-    // should use reactive form
     this.teacherForm = this.fb.group ({
       term: ['2564-2'],
     });
