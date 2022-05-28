@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { PageService } from 'src/app/share/page.service';
 
 @Component({
-  selector: 'app-friend',
-  templateUrl: './friend.component.html',
-  styleUrls: ['./friend.component.css']
+  selector: 'teacher',
+  templateUrl: './teacher.component.html',
+  styleUrls: ['./teacher.component.css']
 })
-export class FriendTeacherComponent implements OnInit {
+export class TeacherComponent implements OnInit {
   teacherForm !: FormGroup;
   course: Observable<any> | undefined
   tid:string = 't01';

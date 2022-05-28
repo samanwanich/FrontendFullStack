@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { FriendStudentComponent } from './components/friend1/friend.component';
-import { FriendTeacherComponent } from './components/friend2/friend.component';
+import { StudentComponent } from './components/student/student.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
 
 const routes: Routes = [
-  { path: 'Form-and-Data-Model1', component: FriendStudentComponent},
-  { path: 'Form-and-Data-Model2', component: FriendTeacherComponent}
+  { path: 'studentForm', component: StudentComponent},
+  { path: 'teacherForm', component: TeacherComponent}
 ];
 
 @NgModule({

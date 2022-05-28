@@ -5,11 +5,11 @@ import { PageService } from 'src/app/share/page.service';
 
 
 @Component({
-  selector: 'app-friend',
-  templateUrl: './friend.component.html',
-  styleUrls: ['./friend.component.css']
+  selector: 'student',
+  templateUrl: './student.component.html',
+  styleUrls: ['./student.component.css']
 })
-export class FriendStudentComponent implements OnInit {
+export class StudentComponent implements OnInit {
   studentForm !: FormGroup;
   student: Observable<any> | undefined
   sid:string = '6204062630556';
